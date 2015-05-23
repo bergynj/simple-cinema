@@ -1,0 +1,138 @@
+Cinema application
+========================
+Build a small MVC PHP cinema guide application.
+
+ Technical requirements :
+·  Published in a Git repository, accessible via your public GitHub account (note that this repo will be public, so don’t put sensitive information in there)
+·  Built using the Laravel framework version 5.0 (the dev release) - http://laravel.com/
+·  Use Composer for dependency management - http://getcomposer.org/
+·  Use a PostgresSQL, MySQL, or SQLite database
+·  Documented with a README.md file in the document root - https://help.github.com/articles/create-a-repo#create-a-readme-for-your-repository
+
+Functionality requirements:
+Design a RESTful API for mobile applications and web services to access cinema guide listings.
+·  The API must respond to the application/json media type, and return data in the JSON format
+·  The API must support the ability to get a list of movies playing at a given cinema on a given date
+·  The API must have documentation (see API specification below for a starting point)
+
+============================================================
+
+API Specification:
+The following URLs should be considered as a starting point:
+- Cinemas Listing : List of available cinemas.
+    /cinemas
+- Cinema Information : Information about an individual cinema.
+    /cinemas/{name}
+- Movie Information : Information about an individual movie.
+    /movies/{name}
+
+Data Model:
+The model should be based on the following database schema (feel free to enhance/change to suit):
+
+Cinemas:
+- ID
+- Name
+- Address
+- Geo Lat / Lon
+
+Movies:
+- ID
+- Title
+
+Session Times:
+- ID
+- Movie ID
+- Cinema ID
+- Date Time
+
+============================================================
+
+Things to Consider
+·  Structure of the JSON (nested data objects)
+·  Consistent URL structure
+·  More API URLs to complete the cinema data model (eg: location/geo search)
+·  Authentication/Authorisation
+·  Supporting partial dates
+·  Pagination support on cinema listings, eg: ?page={number}
+·  Input validation
+·  Error handling
+
+To Do :
+=======
+Minimum Marketing Features:
+- Home page
+    - Select Cinema (list cinemas)
+    - Date selector (select date)
+    - Show movies + session times 
+- Cinema page
+    - Show movies + session times
+- Movie page
+    - Show session times 
+    - Show reviews ? (dummy) - extra
+
+User(Developer) Stories:
+1. Decide MVC model
+2. Create Lavarel5 folder structure (front-end/back-end)
+3. Data Model (MVC design, JSON structure)
+4. (MVC) Functions breakdown
+
+- Base HTML template 
+- Apply standard project structure / toolchain
+- Integrate boilerplate, bootstrap 3, 
+- Document API
+
+Engineering Tasks:
+(*server side)
+- Setup Lavarel5 app (git, mysql, etc..)
+- create database tables 
+
+Model : 
+    - cinemas
+    - cinema
+    - movie
+
+Controller :
+    -   /cinemas
+    -   /cinema/{name}
+    -   /movie/{name}
+    
+View :
+    - Home
+    - Cinema
+    - Movie
+
+(*client side)
+- Create build script using Grunt (done!)
+- Static code analysis (Lint) using JSHint (done!) : jquery-ui ignored, failed lint test
+- Compile LESS to CSS
+- Minify / optimise JavaScript using grunt-concat & grunt-uglify
+- Setup grunt-watch (to compile CSS & JS everytime saved), and create 'build' task, 'clean' task 
+- PSD to HTML
+- basic homepage with calendar input : (*publish site)
+
+(*later?)
+- Setup testing (unit testing with Mocha, cross-browser testing Karma)
+    (unit test - Mocha) 
+    1. DOM test & load js test
+    2. a function which validates image slider ?
+    (smoke test - Karma)
+    1. run on different browsers 
+
+Config :
+========
+MySQL 5.5 database added.  Please make note of these credentials:
+
+   Root User: admin9tTfMX6
+   Root Password: BIxuRl2hybpk
+   Database Name: php
+
+Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
+
+You can manage your new MySQL database by also embedding phpmyadmin.
+The phpmyadmin username and password will be the same as the MySQL credentials above.
+
+  PhpMyAdmin credentials:
+  Root User: admin9tTfMX6
+  Root Password: BIxuRl2hybpk
+URL: https://php-bergynj.rhcloud.com/phpmyadmin/test
+

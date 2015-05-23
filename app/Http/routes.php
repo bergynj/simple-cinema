@@ -11,7 +11,7 @@
 |
 */
 
-// Route::get('/', 'WelcomeController@index');
+Route::get('/api', 'WelcomeController@index');
 
 Route::get('/', function(){
 	return view('index');
