@@ -17,7 +17,7 @@ class CreateMvsessionsTable extends Migration {
 			$table->increments('id');
 			$table->integer('cinema_id');
 			$table->integer('movie_id');
-			$table->date('session_time');
+			$table->timestamp('session_time');
 			$table->timestamps();
 			// $table->foreign('cinema_id')->references('id')->on('cinema');
 			// $table->foreign('movie_id')->references('id')->on('movies');

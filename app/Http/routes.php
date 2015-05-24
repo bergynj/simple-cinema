@@ -11,14 +11,34 @@
 |
 */
 
-Route::get('/api', 'WelcomeController@index');
-
+// Angular Routing
 Route::get('/', function(){
 	return view('index');
 });
 
-Route::get('home', 'HomeController@index');
+// API test
+Route::get('/api', 'WelcomeController@index');
 
+// Cinema Routing
+Route::get('/cinema', 'CinemaController@index');
+Route::get('/cinema/{id}', 'CinemaController@show');
+
+Route::get('/api/cinemas', 'CinemaController@all');
+Route::get('/api/cinema/{id}', 'CinemaController@get');
+
+// Movie Routing
+Route::get('/movies', 'MovieController@index');
+Route::get('/movie/{title}', 'MovieController@show');
+
+Route::get('/api/movies', 'MovieController@all');
+Route::get('/api/movie/{title}', 'MovieController@get');
+
+// Admin Routing
+Route::get('admin', function(){
+	return view('add');
+});
+
+Route::get('home', 'HomeController@index');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -3,7 +3,8 @@
 
 	angular.module('app.controllers').controller('LandingCtrl', function( $scope, $mdToast, $mdDialog ){
 
-		$scope.promoImage = 'http://i.imgur.com/XiMykki.png';
+		// $scope.landingImage = 'http://i.imgur.com/XiMykki.png';
+		$scope.landingImage = 'https://pbs.twimg.com/profile_images/1544854004/For_Facebook.JPG';
 
 		$scope.toastNotification = function(){
 			$mdToast.show(

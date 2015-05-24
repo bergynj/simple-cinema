@@ -13,7 +13,7 @@
 		<md-toolbar md-scroll-shrink>
 			<div class="md-toolbar-tools">
 				<h3>
-					<span>Laravel 5 Angular Material Starter</span>
+					<span> <strong> Simple Cinema Session Listing </strong> </span>
 				</h3>
 			</div>
 		</md-toolbar>

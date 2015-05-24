@@ -23,6 +23,6 @@ class Cinema extends Model {
 	 *
 	 * @var array
 	 */
-	protected $hidden = [];
+	protected $hidden = ['created_at', 'updated_at'];
 
 }

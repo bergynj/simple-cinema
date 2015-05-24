@@ -17,11 +17,31 @@
 					templateUrl: getView('landing')
 				}
 			}
+		}).state('cinema', {
+			url: '/cinema',
+			views: {
+				main: {
+					templateUrl: getView('cinema')
+				},
+				footer: {
+					templateUrl: getView('footer')
+				}
+			}
 		}).state('dashboard', {
 			url: '/dashboard',
 			views: {
 				main: {
 					templateUrl: getView('dashboard')
+				},
+				footer: {
+					templateUrl: getView('footer')
+				}
+			}
+		}).state('admin', {
+			url: '/admin',
+			views: {
+				main: {
+					templateUrl: getView('admin')
 				},
 				footer: {
 					templateUrl: getView('footer')
