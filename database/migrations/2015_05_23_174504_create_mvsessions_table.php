@@ -27,6 +27,7 @@ class CreateMvsessionsTable extends Migration {
 			$table->integer('mvsesion_id')->unsigned()->index();
 			$table->timestamps();
             $table->foreign('cinema_id')->references('id')->on('cinema')->onDelete('cascade');
+            $table->foreign('mvsesion_id')->references('id')->on('mvsessions');
         });
 
         // create pivot table : movies, mvsessions => movie_mvsession
@@ -36,11 +37,12 @@ class CreateMvsessionsTable extends Migration {
 			$table->integer('mvsesion_id')->unsigned()->index();
 			$table->timestamps();
 			$table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
+            $table->foreign('mvsesion_id')->references('id')->on('mvsessions');
         });
 	}
 
 	/**
-	 * Drpo Session time tables to reverse the migrations.
+	 * Drop Session time tables to reverse the migrations.
 	 *
 	 * @return void
 	 */
