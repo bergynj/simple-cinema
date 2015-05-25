@@ -2,23 +2,22 @@
   <md-content class="md-padding">
     <md-tabs md-dynamic-height md-border-bottom>
 
-      <md-tab label="Cinemas">
+      <md-tab label="Cinema">
         <md-content class="md-padding">
             <!-- listCinema with Angular -->
             <div ng-controller="CinemaCtrl" class="listCinemas">
               <md-content>
-                <h3> Cinema Locations </h3>
                 <md-list>
-                  <md-subheader class="md-no-sticky"></md-subheader>
+                  <md-subheader class="md-no-sticky"> Cinema Locations </md-subheader>
                   <md-list-item class="md-3-line" ng-repeat="cinema in cinemas">
 
                     <!-- img src="" class="md-avatar" alt="{{ cinema.name }}" -->
 
                     <!-- {{ cinema.id }} -->
                     <div class="md-list-item-text">
-                      <h3>{{ cinema.name }}</h3>
-                      <h4>{{ cinema.address }}</h4>
-                      <p> {{ cinema.id }} </p>
+                      <h3> <a href="/cinema/{{ cinema.id }}"> {{ cinema.name }} </a> </h3>
+                      <h4> {{ cinema.address }} </h4>
+                      <p class="session-times"> <a href="/sessions/{{ cinema.id }}"> Session times </a> </p>
                     </div>
 
                   </md-list-item>

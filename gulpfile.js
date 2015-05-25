@@ -26,7 +26,7 @@ require('laravel-elixir-imagemin');
  	.less('../../../angular/**/*.less', 'resources/.tmp/')
  	.copy('angular/app/**/*.html', 'public/views/app/')
  	.copy('angular/directives/**/*.html', 'public/views/directives/')
- 	.stylesIn('resources/.tmp', 'public/css/')
- 	.imagemin();
+ 	.stylesIn('resources/.tmp', 'public/css/');
+ 	// .imagemin();
 
  });
