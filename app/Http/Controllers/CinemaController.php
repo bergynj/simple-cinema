@@ -33,7 +33,7 @@ class CinemaController extends Controller {
 		//
         $cinemas = Cinema::all();
 
-        return response()->json($cinemas);
+        return response()->json(['data' => $cinemas], 200);
 	}
 
     /**
@@ -57,9 +57,14 @@ class CinemaController extends Controller {
 	public function get($id)
 	{
 		//
-        $cinema = Cinema::findOrFail($id);
+        $cinema = Cinema::find($id);
 
-        return response()->json($cinema);
+        if (!$cinema)
+        {
+           return response->json(['message' => 'Could not find cinema specified', 'code' => 404], 404);
+        }
+
+        return response()->json(['data' => $cinema],200);
 	}
 
 	/**

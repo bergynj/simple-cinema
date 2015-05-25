@@ -33,7 +33,7 @@ class MovieController extends Controller {
 		//
         $movies = Movies::all();
 
-        return response()->json($movies);
+        return response()->json(['data' => $movies], 200);
 	}
 
     /**
@@ -58,9 +58,14 @@ class MovieController extends Controller {
 	public function get($title)
 	{
 		//
-        $movie = Movies::where('title', $title)->firstOrFail();
+        $movie = Movies::where('title', $title)->first();
 
-        return response()->json($movie);
+        if (!$movie)
+        {
+            return response->json(['message' => 'Could not find movie with this title', 'code' => 404], 404);
+        }
+
+        return response()->json(['data' => $movie], 200);
 	}
 	/**
 	 * Show the form for creating a new resource.
