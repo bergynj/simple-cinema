@@ -61,7 +61,7 @@ class CinemaController extends Controller {
 
         if (!$cinema)
         {
-           return response->json(['message' => 'Could not find cinema specified', 'code' => 404], 404);
+           return response()->json(['message' => 'Could not find cinema specified', 'code' => 404], 404);
         }
 
         return response()->json(['data' => $cinema],200);

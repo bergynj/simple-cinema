@@ -62,11 +62,12 @@ class MovieController extends Controller {
 
         if (!$movie)
         {
-            return response->json(['message' => 'Could not find movie with this title', 'code' => 404], 404);
+            return response()->json(['message' => 'Could not find movie with this title', 'code' => 404], 404);
         }
 
         return response()->json(['data' => $movie], 200);
 	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
