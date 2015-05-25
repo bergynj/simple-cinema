@@ -30,7 +30,7 @@ class CreateCinemaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('cinema');
+		Schema::dropIfExists('cinema');
 	}
 
 }

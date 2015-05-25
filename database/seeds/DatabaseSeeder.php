@@ -35,45 +35,30 @@ class CinemaTableSeeder extends Seeder {
         Cinema::create([
             'name' => 'Ritz Randwick',
             'address' => '45 St Pauls Street, Randwick NSW 2031',
-            'geo' => '{
-                "lat" : "",
-                "lang" : "",
-            }',
+            'geo' => json_encode(array("lat" => "", "lang" => "")),
         ]);
 
         Cinema::create([
             'name' => 'Dendy Newtown',
             'address' => '261-263 King Street, Newtown NSW 2042',
-            'geo' => '{
-                "lat" : "",
-                "lang" : "",
-            }',
+            'geo' => json_encode(array("lat" => "", "lang" => "")),
         ]);
 
         Cinema::create([
             'name' => 'Dendy Opera Quay',
             'address' => 'Shop9, 2 East Circular Quay, Sydney NSW 2000',
-            'geo' => '{
-                "lat" : "",
-                "lang" : "",
-            }',
+            'geo' => json_encode(array("lat" => "", "lang" => "")),
         ]);
         Cinema::create( [
             'name' => 'Palace Norton Street',
             'address' => '99 Norton Street, Leichhardt NSW 2040',
-            'geo' => '{
-                "lat" : "",
-                "lang" : "",
-            }',
+            'geo' => json_encode(array("lat" => "", "lang" => "")),
         ] );
 
         Cinema::create([
             'name' => 'Palace Verona',
             'address' => '17 Oxford Street, Paddington',
-            'geo' => '{
-                "lat" : "",
-                "lang" : "",
-            }',
+            'geo' =>  json_encode(array("lat" => "", "lang" => "")),
         ]);
 
     }

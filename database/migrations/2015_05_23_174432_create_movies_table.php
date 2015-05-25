@@ -28,7 +28,7 @@ class CreateMoviesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('movies');
+		Schema::dropIfExists('movies');
 	}
 
 }

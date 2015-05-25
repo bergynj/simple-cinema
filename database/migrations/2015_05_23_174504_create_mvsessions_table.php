@@ -17,7 +17,7 @@ class CreateMvsessionsTable extends Migration {
 			$table->increments('id');
 			$table->timestamp('session_time');
 			$table->timestamps();
-            // $table->softDeletes();
+            $table->softDeletes();
 		});
 
         // create pivot table : cinema, mvsessions => cinema_mvsession
@@ -48,9 +48,9 @@ class CreateMvsessionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('mvsessions');
-		Schema::drop('cinema_mvsession');
-		Schema::drop('movie_mvsession');
+		Schema::dropIfExists('mvsessions');
+		Schema::dropIfExists('cinema_mvsession');
+		Schema::dropIfExists('movie_mvsession');
 	}
 
 }
