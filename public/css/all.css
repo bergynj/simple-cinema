@@ -1,3 +1,15 @@
+.Admin-Container p {
+  padding: 0 20px;
+  text-align: center;
+}
+.Admin-Container p.md-caption {
+  margin-top: -7px;
+  color: #777;
+}
+.Admin-Container .demo-content {
+  min-height: 348px;
+}
+
 .Cinema-Container li {
   line-height: 26px;
 }
@@ -15,10 +27,6 @@
 }
 p.session-times a {
   text-decoration: none;
-}
-
-.Admin-Container li {
-  line-height: 26px;
 }
 
 .Dashboard-Container li {
@@ -41,4 +49,12 @@ p.session-times a {
 }
 .Landing-CallToAction {
   text-align: center;
+}
+
+.Movies-Container li {
+  line-height: 26px;
+}
+.listMovies md-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

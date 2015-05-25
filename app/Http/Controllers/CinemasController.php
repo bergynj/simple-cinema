@@ -1,14 +1,14 @@
 <?php namespace App\Http\Controllers;
 
 // import Cinema Class
-use App\Cinema;
+use App\Cinemas;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class CinemaController extends Controller {
+class CinemasController extends Controller {
 
 	/**
 	 * Display page listing of all Cinemas.
@@ -18,9 +18,9 @@ class CinemaController extends Controller {
 	public function index()
 	{
 		//
-        $cinemas = Cinema::all();
+        $cinemas = Cinemas::all();
 
-        return view('cinema', compact('cinemas'));
+        return view('cinemas', compact('cinemas'));
 	}
 
 	/**
@@ -31,7 +31,7 @@ class CinemaController extends Controller {
 	public function all()
 	{
 		//
-        $cinemas = Cinema::all();
+        $cinemas = Cinemas::all();
 
         return response()->json(['data' => $cinemas], 200);
 	}
@@ -44,9 +44,9 @@ class CinemaController extends Controller {
 	public function show($id)
 	{
 		//
-        $cinema = Cinema::findOrFail($id);
+        $cinema = Cinemas::findOrFail($id);
 
-        return view('cinema', compact('cinema'));
+        return view('cinemas', compact('cinema'));
 	}
 
     /**
@@ -57,7 +57,7 @@ class CinemaController extends Controller {
 	public function get($id)
 	{
 		//
-        $cinema = Cinema::find($id);
+        $cinema = Cinemas::find($id);
 
         if (!$cinema)
         {

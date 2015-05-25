@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCinemaTable extends Migration {
+class CreateMoviesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,11 @@ class CreateCinemaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('cinema', function(Blueprint $table)
+		Schema::table('movies', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
-			$table->string('address');
-			$table->json('geo');
+			$table->string('title');
 			$table->timestamps();
-			// $table->softDeletes();
 		});
 	}
 
@@ -30,7 +27,12 @@ class CreateCinemaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('cinema');
+		Schema::table('movies', function(Blueprint $table)
+		{
+			DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+			Schema::dropIfExists('movies');
+			DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+		});
 	}
 
 }

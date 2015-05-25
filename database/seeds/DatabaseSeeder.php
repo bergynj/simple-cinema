@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,7 +19,7 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('UserTableSeeder');
         $this->call( 'CinemaTableSeeder' );
         $this->call( 'MoviesTableSeeder' );
-        // $this->call( 'SessionsTableSeeder' );
+        $this->call( 'MvsessionTableSeeder' );
 
 	}
 
@@ -92,15 +94,20 @@ class moviesTableSeeder extends Seeder {
     }
 }
 
-// seed session tables
-use App\Sessions as Mvsessions;
 
-class mvsessionsTableSeeder extends Seeder {
+// seed session tables
+use App\Msessions as Msessions;
+
+class msessionsTableSeeder extends Seeder {
     public function run() {
 
         // clear table
-        // Mvsessions::truncate();
+        Msessions::truncate();
 
+        // Carbon::create($year, $month, $day, $hour, $minute, $second, $tz);
+        Msessions::create([
+            'session_time' => Carbon::create(2015, 5, 26, 9, 30, 0, 'Australia/Sydney');
+        ]);
 
     }
 }

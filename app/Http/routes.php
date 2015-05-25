@@ -20,22 +20,24 @@ Route::get('/', function(){
 Route::get('/api', 'WelcomeController@index');
 
 // Cinema Routing
-Route::get('/cinema', 'CinemaController@index');
-Route::get('/cinema/{id}', 'CinemaController@show');
+Route::get('/cinemas', 'CinemasController@index');
+Route::get('/api/cinemas', 'CinemasController@all');
 
-Route::get('/api/cinemas', 'CinemaController@all');
+// List movies & session time
+Route::get('/cinema/{id}', 'CinemaController@show');
 Route::get('/api/cinema/{id}', 'CinemaController@get');
 
 // Movie Routing
 Route::get('/movies', 'MovieController@index');
-Route::get('/movie/{title}', 'MovieController@show');
-
 Route::get('/api/movies', 'MovieController@all');
+
+// Show movie details
+Route::get('/movie/{title}', 'MovieController@show');
 Route::get('/api/movie/{title}', 'MovieController@get');
 
 // Admin Routing
-Route::get('admin', function(){
-	return view('add');
+Route::get('/admin', function(){
+	return view('admin');
 });
 
 Route::get('home', 'HomeController@index');

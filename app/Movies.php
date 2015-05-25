@@ -24,4 +24,17 @@ class Movies extends Model {
 	 * @var array
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
+
+	/**
+	 * Movie session showing
+	 * A movie can have many session time
+	 *
+	 * @param
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function msessions()
+	{
+	   return $this->hasMany('App\Msessions');
+	}
+
 }

@@ -1,0 +1,33 @@
+<div ng-controller="MoviesCtrl" class="Movies-Container">
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+
+      <md-tab label="Movies">
+        <md-content class="md-padding">
+            <!-- listMovies with Angular -->
+            <div ng-controller="MoviesCtrl" class="listMovies">
+              <md-content>
+                <md-list>
+                  <md-subheader class="md-no-sticky"> Movies Locations </md-subheader>
+                  <md-list-item class="md-3-line" ng-repeat="movie in movies">
+
+                    <!-- img src="" class="md-avatar" alt="{{ movie.title }}" -->
+
+                    <!-- {{ movie.id }} -->
+                    <div class="md-list-item-text">
+                      <h3> <a href="/movie/{{ movie.id }}"> {{ movie.title }} </a> </h3>
+                      <!-- h4> </h4>
+                      <p> </p-->
+                    </div>
+
+                  </md-list-item>
+                  <md-divider></md-divider>
+                </md-list>
+              </md-content>
+            </div>
+
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
