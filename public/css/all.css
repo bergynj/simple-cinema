@@ -14,6 +14,14 @@
   line-height: 26px;
 }
 
+.Cinema-Container li {
+  line-height: 26px;
+}
+.listCinemas md-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .Footer-Container {
   background-color: #ececec;
   padding: 30px;

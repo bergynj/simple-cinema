@@ -1,28 +1,13 @@
 <div ng-controller="CinemaCtrl" class="Cinema-Container">
   <md-content class="md-padding">
     <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="Laravel 5">
-        <md-content class="md-padding">
-          <h1 class="md-display-1"> This is Cinema testing </h1>
-          <p>
-				The Laravel 5 that you loved, comes configured to run with AngularJS:<br>
-				<ul>
-					<li>A view (resources/index.blade.php) that loads all the assets you need (CSS and JS) &amp; sets up angular ui-router</li>
-					<li>Support for CSRF token when using the API</li>
-					<li><a href="https://github.com/barryvdh/laravel-debugbar" target="_blank">Debugbar</a> for Laravel 5: It's that bar you see at the bottom. Very useful for debugging the API</li>
-					<li>Sample API endpoints</li>
-					<li>Elixir configuration for Angular, jshint, jscs, imagemin and more!</li>
-				</ul>
-          </p>
-        </md-content>
-      </md-tab>
 
       <md-tab label="Cinemas">
         <md-content class="md-padding">
-
             <!-- listCinema with Angular -->
             <div ng-controller="CinemaCtrl" class="listCinemas">
               <md-content>
+                <h3> Cinema Locations </h3>
                 <md-list>
                   <md-subheader class="md-no-sticky"></md-subheader>
                   <md-list-item class="md-3-line" ng-repeat="cinema in cinemas">

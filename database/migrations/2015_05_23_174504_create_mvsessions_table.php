@@ -48,6 +48,16 @@ class CreateMvsessionsTable extends Migration {
 	 */
 	public function down()
 	{
+        Schema::table('cinema_mvsession', function(Blueprint $table) {
+            $table->dropForeign('cinema_id');
+            $table->dropForeign('mvsesion_id');
+        });
+
+        Schema::table('movie_mvsession', function(Blueprint $table) {
+            $table->dropForeign('movie_id');
+            $table->dropForeign('mvsesion_id');
+        });
+
 		Schema::dropIfExists('mvsessions');
 		Schema::dropIfExists('cinema_mvsession');
 		Schema::dropIfExists('movie_mvsession');

@@ -17,11 +17,11 @@
 					templateUrl: getView('landing')
 				}
 			}
-		}).state('cinema', {
-			url: '/cinema',
+		}).state('cinemas', {
+			url: '/cinemas',
 			views: {
 				main: {
-					templateUrl: getView('cinema')
+					templateUrl: getView('cinemas')
 				},
 				footer: {
 					templateUrl: getView('footer')
