@@ -12,7 +12,7 @@ class CreateMoviesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('movies', function(Blueprint $table)
+		Schema::create('movies', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('title');
@@ -27,12 +27,9 @@ class CreateMoviesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('movies', function(Blueprint $table)
-		{
-			DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-			Schema::dropIfExists('movies');
-			DB::statement('SET FOREIGN_KEY_CHECKS = 1');
-		});
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+		Schema::dropIfExists('movies');
+		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }

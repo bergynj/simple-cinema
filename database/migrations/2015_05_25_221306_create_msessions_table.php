@@ -37,12 +37,9 @@ class CreateMsessionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('msessions', function(Blueprint $table)
-		{
-			DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-  			Schema::dropIfExists('msessions');
-			DB::statement('SET FOREIGN_KEY_CHECKS = 1');
-		});
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+		Schema::dropIfExists('msessions');
+		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }
