@@ -33,7 +33,7 @@ class Msessions extends Model {
 	 */
 	public function cinemas()
 	{
-	   return $this->belongsToMany(App\Cinemas)->withTimestamps();
+	   return $this->belongsToMany('App\Cinemas','cinema_msession')->withTimestamps();
 	}
 
 	/**
@@ -44,7 +44,7 @@ class Msessions extends Model {
 	 */
 	public function movies()
 	{
-	   return $this->belongsToMany(App\Movies)->withTimestamps();
+	   return $this->belongsToMany('App\Movies','movie_msession')->withTimestamps();
 	}
 
 }
