@@ -12,7 +12,7 @@ class CreateMsessionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('msessions', function(Blueprint $table)
+		Schema::create('msessions', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('cinema_id')->unsigned()->index();
