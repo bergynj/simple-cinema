@@ -32,9 +32,9 @@ class Movies extends Model {
 	 * @param
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
-	public function msessions()
+	public function sessions()
 	{
-	   return $this->hasMany('App\Msessions');
+	   return $this->hasMany('App\Msessions', 'id');
 	}
 
 }

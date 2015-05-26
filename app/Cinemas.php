@@ -26,15 +26,17 @@ class Cinemas extends Model {
 	protected $hidden = ['created_at', 'updated_at'];
 
 	/**
-	 * The movie showing in this cinema
-	 * Movies lookup through Msessions table
+	 * The session showing in this cinema
+	 * Session lookup through Msessions table
 	 *
 	 * @param
 	 * @return \Illuminate\Database\Eloquent\Relations\hasManyThrough
 	 */
-	public function movies()
+	public function sessions()
 	{
-	   return $this->hasManyThrough('App\Movies', 'App\Msessions');
+	   return $this->hasMany('App\Msessions', 'id');
 	}
+
+
 
 }
