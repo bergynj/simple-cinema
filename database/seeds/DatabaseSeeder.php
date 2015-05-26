@@ -106,7 +106,33 @@ class msessionsTableSeeder extends Seeder {
 
         // Carbon::create($year, $month, $day, $hour, $minute, $second, $tz);
         Msessions::create([
+            'cinema_id' => 1,
+            'movie_id' => 1,
             'session_time' => Carbon::create(2015, 5, 26, 9, 30, 0, 'Australia/Sydney');
+        ]);
+
+        Msessions::create([
+            'cinema_id' => 2,
+            'movie_id' => 3,
+            'session_time' => Carbon::create(2015, 5, 26, 10, 30, 0, 'Australia/Sydney');
+        ]);
+
+        Msessions::create([
+            'cinema_id' => 3,
+            'movie_id' => 4,
+            'session_time' => Carbon::create(2015, 5, 26, 11, 30, 0, 'Australia/Sydney');
+        ]);
+
+        Msessions::create([
+            'cinema_id' => 4,
+            'movie_id' => 2,
+            'session_time' => Carbon::create(2015, 5, 26, 13, 30, 0, 'Australia/Sydney');
+        ]);
+
+        Msessions::create([
+            'cinema_id' => 5,
+            'movie_id' => 5,
+            'session_time' => Carbon::create(2015, 5, 26, 15, 30, 0, 'Australia/Sydney');
         ]);
 
     }

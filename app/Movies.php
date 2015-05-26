@@ -26,7 +26,7 @@ class Movies extends Model {
 	protected $hidden = ['created_at', 'updated_at'];
 
 	/**
-	 * Movie session showing
+	 * Movie session times
 	 * A movie can have many session time
 	 *
 	 * @param
