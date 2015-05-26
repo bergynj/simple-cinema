@@ -30,11 +30,12 @@ class Movies extends Model {
 	 * A movie can have many session time
 	 *
 	 * @param
+	 * @foreign_key movie_id
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
 	public function sessions()
 	{
-	   return $this->hasMany('App\Msessions', 'id');
+	   return $this->hasMany('App\Msessions', 'movie_id');
 	}
 
 }

@@ -30,11 +30,12 @@ class Cinemas extends Model {
 	 * Session lookup through Msessions table
 	 *
 	 * @param
+	 * @foreign_key cinema_id
 	 * @return \Illuminate\Database\Eloquent\Relations\hasManyThrough
 	 */
 	public function sessions()
 	{
-	   return $this->hasMany('App\Msessions', 'id');
+	   return $this->hasMany('App\Msessions', 'cinema_id');
 	}
 
 
