@@ -17,47 +17,44 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		// $this->call('UserTableSeeder');
-        $this->call( 'CinemaTableSeeder' );
+        $this->call( 'CinemasTableSeeder' );
         $this->call( 'MoviesTableSeeder' );
-        $this->call( 'MvsessionTableSeeder' );
+        $this->call( 'MsessionTableSeeder' );
 
 	}
 
 }
 
 // seed cinema tables using Eloquent model
-use App\Cinema as Cinema;
+use App\Cinemas as Cinemas;
 
-class CinemaTableSeeder extends Seeder {
+class CinemasTableSeeder extends Seeder {
     public function run() {
 
-        // clear table
-        Cinema::truncate();
-
-        Cinema::create([
+        Cinemas::create([
             'name' => 'Ritz Randwick',
             'address' => '45 St Pauls Street, Randwick NSW 2031',
             'geo' => json_encode(array("lat" => "", "lang" => "")),
         ]);
 
-        Cinema::create([
+        Cinemas::create([
             'name' => 'Dendy Newtown',
             'address' => '261-263 King Street, Newtown NSW 2042',
             'geo' => json_encode(array("lat" => "", "lang" => "")),
         ]);
 
-        Cinema::create([
+        Cinemas::create([
             'name' => 'Dendy Opera Quay',
             'address' => 'Shop9, 2 East Circular Quay, Sydney NSW 2000',
             'geo' => json_encode(array("lat" => "", "lang" => "")),
         ]);
-        Cinema::create( [
+        Cinemas::create( [
             'name' => 'Palace Norton Street',
             'address' => '99 Norton Street, Leichhardt NSW 2040',
             'geo' => json_encode(array("lat" => "", "lang" => "")),
         ] );
 
-        Cinema::create([
+        Cinemas::create([
             'name' => 'Palace Verona',
             'address' => '17 Oxford Street, Paddington',
             'geo' =>  json_encode(array("lat" => "", "lang" => "")),
@@ -71,9 +68,6 @@ use App\Movies as Movies;
 
 class moviesTableSeeder extends Seeder {
     public function run() {
-
-        // clear table
-        Movies::truncate();
 
         Movies::create([
             'title' => 'Spy',
@@ -98,41 +92,38 @@ class moviesTableSeeder extends Seeder {
 // seed session tables
 use App\Msessions as Msessions;
 
-class msessionsTableSeeder extends Seeder {
+class MsessionTableSeeder extends Seeder {
     public function run() {
-
-        // clear table
-        Msessions::truncate();
 
         // Carbon::create($year, $month, $day, $hour, $minute, $second, $tz);
         Msessions::create([
             'cinema_id' => 1,
             'movie_id' => 1,
-            'session_time' => Carbon::create(2015, 5, 26, 9, 30, 0, 'Australia/Sydney');
+            'session_time' => Carbon::create(2015, 5, 26, 9, 30, 0, 'Australia/Sydney'),
         ]);
 
         Msessions::create([
             'cinema_id' => 2,
             'movie_id' => 3,
-            'session_time' => Carbon::create(2015, 5, 26, 10, 30, 0, 'Australia/Sydney');
+            'session_time' => Carbon::create(2015, 5, 26, 10, 30, 0, 'Australia/Sydney'),
         ]);
 
         Msessions::create([
             'cinema_id' => 3,
             'movie_id' => 4,
-            'session_time' => Carbon::create(2015, 5, 26, 11, 30, 0, 'Australia/Sydney');
+            'session_time' => Carbon::create(2015, 5, 26, 11, 30, 0, 'Australia/Sydney'),
         ]);
 
         Msessions::create([
             'cinema_id' => 4,
             'movie_id' => 2,
-            'session_time' => Carbon::create(2015, 5, 26, 13, 30, 0, 'Australia/Sydney');
+            'session_time' => Carbon::create(2015, 5, 26, 13, 30, 0, 'Australia/Sydney'),
         ]);
 
         Msessions::create([
             'cinema_id' => 5,
             'movie_id' => 5,
-            'session_time' => Carbon::create(2015, 5, 26, 15, 30, 0, 'Australia/Sydney');
+            'session_time' => Carbon::create(2015, 5, 26, 15, 30, 0, 'Australia/Sydney'),
         ]);
 
     }
