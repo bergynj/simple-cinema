@@ -2,14 +2,46 @@
 	"use strict";
 
 	angular.module('app.controllers')
+
+        /**
+        * @ngdoc
+        * @name app
+        * @type controller
+        *
+        * @description
+        * Get cinema data with simple Angular $http service
+        */
         .controller('CinemaCtrlService', ['$scope','$http', function($scope, $http) {
             // get data from API
             $http.get('/api/cinemas').success(function(data) {
                 // 'this' in here refer to $http service object, must use store alias
                 $scope.cinemas = data[0];
             });
-
         }])
+
+        /**
+        * @ngdoc
+        * @name app
+        * @type controller
+        *
+        * @description
+        * Get cinema data with REST Restangular API
+        */
+        .controller('CinemaRestangularService', ['$scope','Restangular', function($scope, Restangular) {
+            var resource = Restangular.all('/api/cinemas');
+            resource.getList().then(function(cinemas){
+                $scope.cinemas = cinemas;
+            });
+        }])
+
+        /**
+        * @ngdoc
+        * @name app
+        * @type controller
+        *
+        * @description
+        * Sample cinema data using dummy JSON
+        */
         .controller('CinemaCtrlDummy', function($scope) {
             $scope.cinemas = [{
                 'id': 1,

@@ -10,14 +10,6 @@
   min-height: 348px;
 }
 
-.Cinema-Container li {
-  line-height: 26px;
-}
-.listCinemas md-divider {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .Admin-Container p {
   padding: 0 20px;
   text-align: center;
@@ -28,6 +20,14 @@
 }
 .Admin-Container .demo-content {
   min-height: 348px;
+}
+
+.Cinema-Container li {
+  line-height: 26px;
+}
+.listCinemas md-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .Cinema-Container li {
