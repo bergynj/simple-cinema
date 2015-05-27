@@ -37,11 +37,11 @@
 					templateUrl: getView('footer')
 				}
 			}
-		}).state('admin', {
-			url: '/admin',
+		}).state('add', {
+			url: '/add',
 			views: {
 				main: {
-					templateUrl: getView('admin')
+					templateUrl: getView('add')
 				},
 				footer: {
 					templateUrl: getView('footer')

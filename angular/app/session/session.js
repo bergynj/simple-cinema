@@ -2,7 +2,7 @@
 	"use strict";
 
 	angular.module('app.controllers')
-        .controller('AdminAsyncController', function($timeout, $scope) {
+        .controller('AddSessionAsyncController', function($timeout, $scope) {
             $scope.loadCinemas = function() {
                 // Use timeout to simulate a 650ms request.
                 $scope.cinemas = [];
@@ -41,7 +41,7 @@
             };
 
         })
-        .controller('AdminCtrl', ['$http', function($http) {
+        .controller('AddCtrl', ['$http', function($http) {
 
           // Simple POST request example (passing data) :
           $http.post('/someUrl', {msg:'hello word!'})

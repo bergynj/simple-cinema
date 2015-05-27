@@ -33,7 +33,8 @@ class CinemasController extends Controller {
 		//
         $cinemas = Cinemas::all();
 
-        return response()->json(['data' => $cinemas], 200);
+        // return response()->json(['data' => $cinemas], 200);
+        return response()->json([$cinemas], 200);
 	}
 
     /**

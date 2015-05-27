@@ -2,7 +2,15 @@
 	"use strict";
 
 	angular.module('app.controllers')
-        .controller('CinemaCtrl', function($scope) {
+        .controller('CinemaCtrlService', ['$scope','$http', function($scope, $http) {
+            // get data from API
+            $http.get('/api/cinemas').success(function(data) {
+                // 'this' in here refer to $http service object, must use store alias
+                $scope.cinemas = data[0];
+            });
+
+        }])
+        .controller('CinemaCtrlDummy', function($scope) {
             $scope.cinemas = [{
                 'id': 1,
                 'name': 'Ritz Randwick',
@@ -30,15 +38,5 @@
                         'lang': '',
                     }],
               }];
-	    })
-        .controller('CinemaCtrlService', ['$http', function($http) {
-            var cinema = this;   // create an alias for this, to be used inside $http get
-            cinema.items = [];    // init store data
-
-            $http.get('/api/cinemas').success(function(data) {
-                // 'this' in here refer to $http service object, must use store alias
-                cinema.items = data;
-            });
-	}]);
-
+	    });
 })();

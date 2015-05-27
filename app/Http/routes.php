@@ -11,7 +11,7 @@
 |
 */
 
-// Angular Routing
+// Angular routing
 Route::get('/', function(){
 	return view('index');
 });
@@ -19,7 +19,7 @@ Route::get('/', function(){
 // API test
 Route::get('/api', 'WelcomeController@index');
 
-// Cinema Routing
+// Cinema routing
 Route::get('/cinemas', 'CinemasController@index');
 Route::get('/api/cinemas', 'CinemasController@all');
 
@@ -27,7 +27,7 @@ Route::get('/api/cinemas', 'CinemasController@all');
 Route::get('/cinema/{id}', 'CinemasController@show');
 Route::get('/api/cinema/{id}', 'CinemasController@get');
 
-// Movie Routing
+// Movie routing
 Route::get('/movies', 'MoviesController@index');
 Route::get('/api/movies', 'MoviesController@all');
 
@@ -35,9 +35,9 @@ Route::get('/api/movies', 'MoviesController@all');
 Route::get('/movie/{title}', 'MoviesController@show');
 Route::get('/api/movie/{title}', 'MoviesController@get');
 
-// Admin Routing
-Route::get('/admin', function(){
-	return view('admin');
+// add sessions
+Route::get('/add', function(){
+	return view('add');
 });
 
 Route::get('home', 'HomeController@index');

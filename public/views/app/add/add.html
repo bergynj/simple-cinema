@@ -1,0 +1,40 @@
+<div ng-controller="AddAsyncController" layout="column" class="Add-Container">
+
+  <md-content layout-padding="">
+    <form name="userForm">
+
+      <!-- This function returns a promise, it will display a loading indicator while it is being resolved -->
+      <p> Select Cinema : </p>
+      <div layout="column" layout-align="center center" style="height: 100px;">
+        <md-select ng-model="cinema" md-on-open="loadCinemas()" style="min-width: 200px;">
+          <md-select-label>{{ cinema ? cinema.name : 'Select Cinema location' }}</md-select-label>
+          <md-option ng-value="cinema" ng-repeat="cinema in cinemas">{{cinema.name}}</md-option>
+        </md-select>
+        <p class="md-caption">You have selected Cinema : {{ cinema ? cinema.name : 'Nothing selected' }}</p>
+      </div>
+
+      <p> Select Movies : </p>
+      <div layout="column" layout-align="center center" style="height: 100px;">
+        <md-select ng-model="movie" md-on-open="loadMovies()" style="min-width: 200px;">
+          <md-select-label>{{ movie ? movie.title : 'Pick a Movie' }}</md-select-label>
+          <md-option ng-value="movie" ng-repeat="movie in movies">{{movie.title}}</md-option>
+        </md-select>
+        <p class="md-caption">You have selected Movie : {{ movie ? movie.name : 'Nothing selected' }}</p>
+      </div>
+
+      <p> Set Movie Showing : (*use Chrome!) </p>
+      <div layout="" layout-sm="column">
+        <md-input-container flex="">
+          <label>Set date (*only dd/mm/yyyy format) </label>
+          <input type="date" ng-model="mvsession.date">
+        </md-input-container>
+        <md-input-container flex="">
+          <label>Set session time (*only hh:mm am/pm format)</label>
+          <input type="time" ng-model="mvsession.stime">
+        </md-input-container>
+      </div>
+
+    </form>
+  </md-content>
+
+</div>

@@ -1,3 +1,23 @@
+.Add-Container p {
+  padding: 0 20px;
+  text-align: center;
+}
+.Add-Container p.md-caption {
+  margin-top: -7px;
+  color: #777;
+}
+.Add-Container .demo-content {
+  min-height: 348px;
+}
+
+.Cinema-Container li {
+  line-height: 26px;
+}
+.listCinemas md-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .Admin-Container p {
   padding: 0 20px;
   text-align: center;
@@ -8,14 +28,6 @@
 }
 .Admin-Container .demo-content {
   min-height: 348px;
-}
-
-.Cinema-Container li {
-  line-height: 26px;
-}
-.listCinemas md-divider {
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .Cinema-Container li {
@@ -57,4 +69,16 @@ p.session-times a {
 .listMovies md-divider {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.Add-Container p {
+  padding: 0 20px;
+  text-align: center;
+}
+.Add-Container p.md-caption {
+  margin-top: -7px;
+  color: #777;
+}
+.Add-Container .demo-content {
+  min-height: 348px;
 }
